@@ -31,6 +31,17 @@ class page_subnotes extends Page {
 				if($_GET['claimed'])
 				{
 					//user must choose the story in which the subnote will be active
+
+                    $m= $c->model->load($_GET['claimed']);
+
+
+                    // Set user_id to mine
+                    $m['user_id']=$this->api->auth->model->id;
+                    $m->save();
+
+
+                    $this->js(null, $c->js()->reload())->univ()->alert('You have claimed '.$m['nume'])->execute();
+
 				}
 			}
 		}

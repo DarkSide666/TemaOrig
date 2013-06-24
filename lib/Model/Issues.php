@@ -7,7 +7,7 @@ class Model_Issues extends Model_Table {
 		$this->addField('Title')->mandatory('Introduceti titlul problemei');
 		$this->addField('Priority')->mandatory('Care este prioritatea?');
 		$this->addField('TargetDate')->type('date');
-		$this->addField('is_fixed')->hidden('true');
+		$this->addField('is_fixed')->type('boolean')->hidden('true');
 		//$this->addField('sprint_id')->editable(false);
 
 		//$this->hasOne('User',null,'first_name');
@@ -20,7 +20,7 @@ class Model_Issues extends Model_Table {
 	}
 	
 	function Fixit(){
-		$this['is_fixed']=1;
-		$this->save();
+		$this['is_fixed']=true;
+		$this->saveAndUnload();
     }
 }

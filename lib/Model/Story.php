@@ -20,10 +20,25 @@ class Model_Story extends Model_Table {
         //});
 
 
+        // simple implementation of log
+        $this->addHook('afterInsert',function($m){
+
+            $x=$m->add('Model_Log');
+            $m['action']='new_story';
+            $m['user_id']=$m->api->auth->model->id;
+            $m['info']='blah blah';
+            $m->save();
+
+        });
 
 	}
 
 		function action_Muta_In_Sprint1(){
+            /*
+             * DEMO: how to assign story with sprint
+            $this['sprint_id']=123;
+            $this->save()
+             */
 		}
 		function action_Muta_In_Sprint2(){}
 		function action_Muta_In_Sprint3(){}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title><?page_title?>Licenta Malus Alexandru<?/?></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="<?template?>images/favicon.ico<?/?>" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/jquery-ui.css<?/?>" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-main.css<?/?>" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-custom.css<?/?>" />
+		<?$js_include?>
+
+        <script type="text/javascript" src="<?template?>js/myscript.js<?/?>"></script>
+
+		<!--[if IE 8]>
+			<link rel="stylesheet" type="text/css" href="<?template?>css/ie8.css<?/?>"/>
+			<script type="text/javascript" src="<?template?>css/ie8.js<?/?>"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			$(function(){
+				<?$document_ready?>
+			});
+		</script>
+	</head>
+	<body>
+		<div id="atk-layout" class="atk-wrapper">
+			<div id="header">
+				<?logo?><div id="atk-logo" class="ui-widget-header float-left"><a 
+                                    href="<?page?>index<?/?>"><img src="<?template?>images/logo.png<?/?>" /></a></div><?/logo?>
+				<div id="header-right">
+					<?Menu?>
+                            <div class="atk-menu atk-menu-horizontal ui-widget">
+                                <ul>
+								    <li class="ui-state-default"><a href="javascript:void(0)">Menu is not defined</a></li>
+                                </ul>
+							</div>
+					<?/?>
+
+                    <div style="clear: both"></div>
+
+                    <?$Menu2?>
+				</div>
+			</div>
+			<?$Content?>
+			<div id="atk-footer-guard"></div>
+		</div>
+		<?Footer?>
+		<div id="footer" class="atk-wrapper">
+			Proiect de diploma student Malus Alexandru. &copy; 2013
+			<div id="credit">
+          <div><a id="newsletter-button" href="/TemaOrig2/?page=subscribe">Subscribe la Newsletter</a><span
+              class="atk-sep">|</span><a id="contact-button" href="/TemaOrig2/?page=contact">Contactati-ne!</a></div>
+        </div>
+		<?/?>
+		<div id="atk-growl-holder" class="atk-growl"></div>
+	</body>
+</html>

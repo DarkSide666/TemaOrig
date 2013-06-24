@@ -19,7 +19,7 @@ class page_issues extends Page{
 				$g->grid->getColumn('Priority')->makeSortable();
 				if($_GET['fixed'])
 				{
-					$g->model->loadData($_GET['is_fixed']);
+					$g->model->loadData($_GET['fixed']);
 					
 					$g->model->Fixit();
 

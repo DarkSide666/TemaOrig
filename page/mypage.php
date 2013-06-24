@@ -48,10 +48,18 @@ class page_mypage extends Page {
 			'text'=>'Temperature (°C)')),
 		'tooltip'=>array(array(
 			'enabled'=>'false'),
-			//'formatter'=>array(
+			'formatter'=>array(
+                // DEMO: next line will put "myfunc" inside javascript without
+                // any modifications
+                $this->js(null,'myfunc')
+
+
+                //$this->js(null,'function(){ return .... } ')
+                // ^^
+
 			//'function()'=>'return '<b>'+ this.series.name +'</b><br/>'+
               //          this.x +': '+ this.y +'°C';')
-			//),
+			),
 		'plotOptions'=>array('line'=>array(
 			'dataLabels'=>array('enabled'=>'true'),
 			'enableMouseTracking'=>'false')),	
@@ -87,7 +95,7 @@ class page_mypage extends Page {
 			array('6.6'),
 			array('4.8')
             ))
-			))));
+			))))->debug();
    }
    
    

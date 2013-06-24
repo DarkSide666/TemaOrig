@@ -26,43 +26,67 @@ class Frontend extends ApiFrontend {
         $this->auth->allowPage(array('index'));  
 
 		if($this->auth->isLoggedIn()){
-		$this->add('menu/Menu_Dropdown',null,'Menu')
+
+		$menu = $this->add('menu/Menu_Dropdown',null,'Menu');
+        $menu
 		->setType('horizontal')
 		->setPosition('left')
-		->addMenuItem('index','Welcome')
+		->addMenuItem('index','Welcome');
+
+
+        $menu
 		->addMenuItem('proiect','Project Planning')
 		->sub()
 				->addMenuItem('proiect','Current Project')
 				->addMenuItem('story','Story')
 				->addMenuItem('issues','Issues')	
 		->end()
+
+
+
+
         ->addMenuItem('test2','Sprint Planning')
-		->sub()
+        ->sub()
 			->addMenuItem('test2','Sprint Backlog')
 			->addMenuItem('subnotes','Manage Notes')
 			->addMenuItem('test','Sprint Schedule')
 			->addMenuItem('mypage','Sprint Tracking')	
-			
-		->end()
+        ->end()
 		->addMenuItem('user','Current User')
 		->sub()
 			->addMenuItem('vizUseri','Team Members')
 			->addMenuItem('user','Preferences')
 			->addMenuItem('progress','Work in Progress')
-		->end()
+		->end();
+
+        $menu
 		->addMenuItem('log','Log')
         ->addMenuItem('logout','Logout');
 		
-		/*$is_po = $this->api->auth->model['is_po'];
-			if($is_po)
-			{
-				$this->add('menu/Menu_Dropdown',null,'Menu')
-		->setType('horizontal')	// horizontal|vertical (optional)
-		->setPosition('right')	// left|right (optional)
-		->addMenuItem('index','Welcome')
-		->addMenuItem('index','Welcome')
-		;
-			}*/
+		// DEMO - how you can add menu only if admin
+        //if($this->auth->model['is_admin']){
+		      //  }
+        // DEMO: Secondary Menu
+		$menu = $this->add('Menu',null,'Menu2');
+
+        $menu->addMenuItem('test');
+        //$fm = $menu->addSubMenu('Submenu >');
+        $menu->addMenuItem('test2');
+        $menu->addMenuItem('test3');
+        $menu->addMenuItem('test4');
+            
+
+
+
+
+
+
+
+
+
+
+
+
 		}else{
 		$menu=$this->add('Menu',null,'Menu')
             ->addMenuItem('index','Welcome')
